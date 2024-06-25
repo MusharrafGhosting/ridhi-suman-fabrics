@@ -1,41 +1,36 @@
-import Image from 'next/image'
-import React from 'react'
-
+// components/IconBar.js
+import React from "react";
+import Image from "next/image";
 
 const OffBanner = () => {
-    return (
-        <div className='mt-5 p-2 '>
-            <div className="mt-2 flex justify-around items-center">
-                <div className='flex items-center '>
-                    <Image src="/icon/ReadyMade.svg" width={50} height={45} />
-                    <span className='mx-3'>READY MADE </span>
-                </div>
-                <div className=' h-16 w-[1px] bg-slate-400'></div>
-                <div className='flex items-center '>
-                    <Image src="/icon/BestEverDeals.svg" width={60} height={45} />
-                    <span className='mx-3'>BEST EVER DEALS </span>
-                </div>
-                <div className=' h-16 w-[1px] bg-slate-400'></div>
-                <div className='flex items-center '>
-                    <Image src="/icon/MostTrusted.svg" width={60} height={45} />
-                    <span className='mx-3'>MOST TRUSTED </span>
-                </div>
-            </div>
-           
-            <div className="mt-10 flex  items-center justify-center">
-                <div className='flex items-center '>
-                    <Image src="/icon/LovedByEveryone.svg" width={60} height={60} />
-                    <span className='mx-3'>LOVED BY EVERYONE </span>
-                </div>
-                <div className=' h-16 w-[1px] bg-slate-400 mx-20'></div>
-                <div className='flex items-center '>
-                    <span className='mx-3'>EXPRESS SHIPPING </span>
-                    <Image src="/icon/ExpressShipping.svg" width={60} height={45} />
-                </div>   
-            </div>
-            
-        </div>
-    )
-}
+  return (
+    <div className="flex justify-center items-center space-x-6 py-4 bg-white overflow-x-auto">
+      <div className="flex gap-5   items-center">
+        <Image src="/icon/ReadyMade.svg" width={50} height={45} />
 
-export default OffBanner
+        <p className="mt-2 text-sm font-medium ">READY MADE</p>
+      </div>
+      <div className="flex gap-5   items-center">
+        <Image src="/icon/BestEverDeals.svg" width={60} height={45} />
+
+        <p className="mt-2 text-sm font-medium ">BEST EVER DEALS</p>
+      </div>
+      <div className="flex  items-center">
+        <Image src="/icon/MostTrusted.svg" width={60} height={45} />
+
+        <p className="mt-2 text-sm font-medium ">MOST TRUSTED</p>
+      </div>
+      <div className="flex  items-center">
+        <Image src="/icon/LovedByEveryone.svg" width={60} height={45} />
+
+        <p className="mt-2 text-sm font-medium ">LOVED BY EVERYONE</p>
+      </div>
+      <div className="flex gap-5   items-center">
+        <Image src="/icon/ExpressShipping.svg" width={60} height={45} />
+        <p className="mt-2 text-sm font-medium ">EXPRESS SHIPPING</p>
+      </div>
+    </div>
+  );
+};
+
+export default OffBanner;

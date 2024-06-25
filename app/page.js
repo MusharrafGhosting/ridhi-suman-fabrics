@@ -1,7 +1,10 @@
-"use client"
-import Image from "next/image";
+"use client";
 import Nav from "@/components/Nav";
+import Footer from "../components/footer";
 import OffBanner from "@/components/OffBanner";
+import Testimonial from "../components//testimonial";
+import Category from "../components/category";
+import ProductCarousel from "../components/ProductCarousel";
 
 export default function Home() {
   return (
@@ -50,7 +53,41 @@ export default function Home() {
           </span>
         </div>
       </div>
-      <OffBanner />
+      <div className="border-b">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-6 py-2">
+          <div className="flex flex-wrap lg:gap-6 md:gap-4 gap-3 z-30 text-gray-600">
+            <span className="text-black">Categories :</span>
+            <a href="#" className="hover:text-orange-500">
+              Sarees
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Lehengas
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Suits
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Kurtis
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Dupatta
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Chunni
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Accessories
+            </a>
+          </div>
+        </div>
+      </div>
+      <Category />
+      {/* <OffBanner /> */}
+      <ProductCarousel />
+      <ProductCarousel />
+      <ProductCarousel />
+      <Testimonial />
+      <Footer />
     </main>
   );
 }
