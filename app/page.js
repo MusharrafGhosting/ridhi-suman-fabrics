@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import OffBanner from "@/components/OffBanner.jsx";
+import { Carousel } from "@material-tailwind/react";
+import Product from "@/components/Product";
 
 export default function Home() {
   return (
@@ -50,6 +52,7 @@ export default function Home() {
           </span>
         </div>
       </div>
+     
       <OffBanner />
     </main>
   );

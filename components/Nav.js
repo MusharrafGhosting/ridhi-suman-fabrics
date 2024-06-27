@@ -90,19 +90,19 @@ function Nav() {
         className="p-1 font-normal flex gap-1"
       >
         <div
-              class="flex items-center gap-4"
+              className="flex items-center gap-4"
               onClick={() => setOpenProfile((prev) => !prev)}
             >
               <img
                 src="https://docs.material-tailwind.com/img/face-2.jpg"
                 alt="avatar"
-                class="inline-block relative object-cover object-center !rounded-full w-12 h-12"
+                className="inline-block relative object-cover object-center !rounded-full w-12 h-12"
               />
               <div>
-                <h6 class="block font-sans text-base text-black antialiased font-semibold leading-relaxed tracking-normal  ">
+                <h6 className="block font-sans text-base text-black antialiased font-semibold leading-relaxed tracking-normal  ">
                   Atul Kumar
                 </h6>
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-green-400">
+                <p className="block font-sans text-sm antialiased font-normal leading-normal text-green-400">
                   Online
                 </p>
               </div>
