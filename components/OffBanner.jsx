@@ -11,10 +11,10 @@ const OffBanner = () => {
                     <span className='mx-3 text-center md:text-left'>READY MADE</span>
                 </div>
                 <div className='hidden md:block h-16 w-[1px] bg-slate-400'></div>
-                <div className='flex items-center mb-4 md:mb-0'>
+                <dv className='flex items-center mb-4 md:mb-0'>
                     <Image src="/icon/BestEverDeals.svg" width={60} height={45} />
                     <span className='mx-3 text-center md:text-left'>BEST EVER DEALS</span>
-                </div>
+                </dv>
                 <div className='hidden md:block h-16 w-[1px] bg-slate-400'></div>
                 <div className='flex items-center'>
                     <Image src="/icon/MostTrusted.svg" width={60} height={45} />

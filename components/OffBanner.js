@@ -7,7 +7,7 @@ function OffBanner() {
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-5 md:gap-4">
           <div className="col py-4">
-            <Link href="course-list-v3.html" className="card   text-center  ">
+            <Link href="/" className="card   text-center  ">
               <div className="relative text-light">
                 <div className="flex justify-center icon-h-p">
                   <img
@@ -26,7 +26,7 @@ function OffBanner() {
           </div>
 
           <div className="col py-4">
-            <Link href="course-list-v3.html" className="card   text-center ">
+            <Link href="/" className="card   text-center ">
               <div className="relative text-light">
                 <div className="flex justify-center icon-h-p">
                   <img
@@ -45,7 +45,7 @@ function OffBanner() {
           </div>
 
           <div className="col py-4">
-            <Link href="course-list-v3.html" className="card   text-center ">
+            <Link href="/" className="card   text-center ">
               <div className="relative text-light">
                 <div className="flex justify-center icon-h-p">
                   <img
@@ -64,7 +64,7 @@ function OffBanner() {
           </div>
 
           <div className="col py-4">
-            <Link href="course-list-v3.html" className="card   text-center ">
+            <Link href="/" className="card   text-center ">
               <div className="relative text-light">
                 <div className="flex justify-center icon-h-p">
                   <img
@@ -83,7 +83,7 @@ function OffBanner() {
           </div>
 
           <div className="col py-4">
-            <Link href="course-list-v3.html" className="card   text-center ">
+            <Link href="/" className="card   text-center ">
               <div className="relative text-light">
                 <div className="flex justify-center icon-h-p">
                   <img

@@ -89,3 +89,9 @@ body {
   background-color: white;
 
 }
+.Buy-CartButton {
+  width: 335.5px!important;
+  height: 50px;
+  border-radius: 8px;
+  padding: 10px;
+}
