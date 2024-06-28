@@ -81,7 +81,7 @@ function Nav() {
         <Link href={"/"} className="text-black flex gap-1 items-center relative">
           <img src="/icon-2/Cart.svg" alt="Cart" />
           Cart
-          <span class="absolute top-[-2px] left-[36px] inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-teal-600 rounded-full transform translate-x-1/2 -translate-y-1/2">1</span>
+          <span className="absolute top-[-2px] left-[36px] inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-teal-600 rounded-full transform translate-x-1/2 -translate-y-1/2">1</span>
         </Link>
       </Typography>
       <Typography
@@ -170,13 +170,14 @@ function Nav() {
       <div className="max-h-[768px]">
         <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-1 lg:px-8 lg:py-1">
           <div className="flex items-center justify-between  ">
-            <Card className=" shadow-none cursor-pointer   ">
+           <Link href={"/"}>
+           <Card className=" shadow-none cursor-pointer   ">
               <img
                 src="/ridhi-logo.png"
                 alt="logo"
                 className="block max-w-[180px] max-h-[165px]"
               />
-            </Card>
+            </Card></Link>
             <div className="flex items-center gap-4">
               <div className="mr-4 hidden lg:block">{navList}</div>
               <div className="flex items-center lg:hidden">
@@ -250,6 +251,77 @@ function Nav() {
             </div>
           )}
         </Navbar>
+      </div>
+      <div className="overflow-x-hidden bg-[#FF512F] py-1 w-full">
+        <div className=" animate-marquee whitespace-nowrap ">
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            2
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            3
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            4
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            5
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            6
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            7
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            8
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            9
+          </span>
+          <span className="text-md text-white mx-4">
+            Free shipping on orders INR 1499 | 25000+ Designs I Made To Measure
+            10
+          </span>
+        </div>
+      </div>
+      <div className="border-b">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-6 py-2">
+          <div className="flex flex-wrap lg:gap-6 md:gap-4 gap-3  z-30 text-gray-600">
+            <span className="text-black">Categories :</span>
+            <a href="#" className="hover:text-orange-500">
+              Sarees
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Lehengas
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Suits
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Kurtis
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Dupatta
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Chunni
+            </a>
+            <a href="#" className="hover:text-orange-500">
+              Accessories
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );
