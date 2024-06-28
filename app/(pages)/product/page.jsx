@@ -6,6 +6,21 @@ import ProductCarousel from '@/components/ProductCarousel';
 import React, { useState } from 'react'
 
 const ProductPage = () => {
+    const [bigImage, setBigImage] = useState("/image/image.png");
+    const [smallImages, setSmallImages] = useState([
+        "/image/Image1.png",
+        "/image/Image2.png",
+        "/image/Image3.png"
+    ]);
+
+    const handleImageClick = (index) => {
+        const newBigImage = smallImages[index];
+        const newSmallImages = [...smallImages];
+        newSmallImages[index] = bigImage;
+        setBigImage(newBigImage);
+        setSmallImages(newSmallImages);
+    };
+
     const [selectedColor, setSelectedColor] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
     const [mainImage, setMainImage] = useState('/category/other-site/image2.jpg');
@@ -23,7 +38,7 @@ const ProductPage = () => {
         <Nav />
         <div className='flex flex-col md:flex-row my-5'>
             {/* Start Pic Part */}
-            <div className='flex w-full md:w-[45%] flex-col px-2 md:px-10'>
+            <div className='flex w-full lg:w-[45%] flex-col px-2 lg:px-10'>
                 <div className='mb-5 flex justify-center'>
                     <Image 
                         src={mainImage} 
@@ -136,7 +151,7 @@ const ProductPage = () => {
                 {/* End product Feature Icon */}
 
                 {/* Start Social Media Icon */}
-                <div className='flex flex-col md:flex-row items-center gap-4 md:gap-8'>
+                <div className='flex flex-col lg:flex-row items-center gap-4 lg:gap-8'>
                     <div className='flex items-center gap-2'>
                         <span className='font-400 text-md leading-5'>Share</span>
                         <div className='bg-[#1877F2] rounded-full w-[25px] h-[25px] flex items-center justify-center hover:cursor-pointer'>
@@ -161,6 +176,7 @@ const ProductPage = () => {
                 </div>
                 {/* End Social Media Icon */}
             </div>
+            
         </div>
         <ProductCarousel />
 
