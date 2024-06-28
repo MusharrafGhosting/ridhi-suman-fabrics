@@ -7,6 +7,7 @@ import Category from "../components/category";
 import { useState, useEffect } from "react";
 import ProductCarousel from "../components/ProductCarousel";
 import ProductList from "../components/ProductList";
+import "pure-react-carousel/dist/react-carousel.es.css";
 import {
   CarouselProvider,
   Slider,
@@ -14,7 +15,6 @@ import {
   ButtonBack,
   ButtonNext,
 } from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
 
 export default function Home() {
   const [visibleSlides, setVisibleSlides] = useState(1);

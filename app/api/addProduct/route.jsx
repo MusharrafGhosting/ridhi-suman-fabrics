@@ -8,12 +8,14 @@ export const config = {
     },
 };
 
-export async function GET(req){
+export async function GET(req) {
     await connectDB();
-    try{
-           const data = await Product.find()
-    }catch(e){
-        return NextResponse.json({Error:e})
+
+    try {
+        const products = await Product.find({});
+        return NextResponse.json({ products });
+    } catch (error) {
+        return NextResponse.json({ error: 'Error fetching products' }, { status: 500 });
     }
 }
 
