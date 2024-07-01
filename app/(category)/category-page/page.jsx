@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@material-tailwind/react";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa6";
-import Link from "next/link"
+import Link from "next/link";
 import { FaAngleLeft } from "react-icons/fa6";
 import {
   CarouselProvider,
@@ -16,6 +16,7 @@ import {
   ButtonNext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
+import { DrawerDefault } from "./page2";
 
 const initialProducts = [
   {
@@ -152,41 +153,41 @@ const ProductGrid = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products.slice(0, visibleCount).map((product) => (
-           <Link key={product.id} href={`/product`}>
-           <div className="flex flex-col items-center m-2 bg-white rounded-lg shadow-md">
-             {renderImages(product.images)}
-             <div className="p-4 flex flex-col items-start w-full h-full">
-               <div className="flex items-center justify-between w-full mt-2">
-                 <span className="text-white bg-purple-500 text-xs font-semibold px-2 py-1 rounded">
-                   {product.category}
-                 </span>
-                 <span className="text-red-500 bg-pink-100 text-xs font-semibold px-2 py-1 rounded">
-                   {product.discount}
-                 </span>
-               </div>
-               <h3 className="text-lg font-bold mt-2">{product.title}</h3>
-               <div className="flex items-center justify-between w-full mt-2">
-                 <span className="text-gray-500 line-through">
-                   {product.originalPrice}
-                 </span>
-                 <span className="text-red-500 font-bold">
-                   {product.discountedPrice}
-                 </span>
-               </div>
-               <div className="w-full flex justify-between items-center mt-2">
-                 <div className="w-full flex justify-between items-center bg-gray-200 rounded-full h-2.5">
-                   <div
-                     className="bg-gradient-to-r w-9/10 from-red-500 to-orange-500 h-2.5 rounded-full"
-                     style={{ width: "50%" }}
-                   ></div>
-                   <span className="ml-2 text-gray-500 text-sm">
-                     {product.sales}
-                   </span>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </Link>
+          <Link key={product.id} href={`/product`}>
+            <div className="flex flex-col items-center m-2 bg-white rounded-lg shadow-md">
+              {renderImages(product.images)}
+              <div className="p-4 flex flex-col items-start w-full h-full">
+                <div className="flex items-center justify-between w-full mt-2">
+                  <span className="text-white bg-purple-500 text-xs font-semibold px-2 py-1 rounded">
+                    {product.category}
+                  </span>
+                  <span className="text-red-500 bg-pink-100 text-xs font-semibold px-2 py-1 rounded">
+                    {product.discount}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold mt-2">{product.title}</h3>
+                <div className="flex items-center justify-between w-full mt-2">
+                  <span className="text-gray-500 line-through">
+                    {product.originalPrice}
+                  </span>
+                  <span className="text-red-500 font-bold">
+                    {product.discountedPrice}
+                  </span>
+                </div>
+                <div className="w-full flex justify-between items-center mt-2">
+                  <div className="w-full flex justify-between items-center bg-gray-200 rounded-full h-2.5">
+                    <div
+                      className="bg-gradient-to-r w-9/10 from-red-500 to-orange-500 h-2.5 rounded-full"
+                      style={{ width: "50%" }}
+                    ></div>
+                    <span className="ml-2 text-gray-500 text-sm">
+                      {product.sales}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
       {visibleCount < products.length && (
@@ -311,46 +312,46 @@ function ProductCarousel() {
         infinite={true}
       >
         <Slider>
-        {products.map((product, index) => (
-          <Slide index={index} key={product.id}>
-            <Link href="/product-detail-page" className="block">
-              <div className="flex flex-col items-center m-2 bg-white rounded-lg shadow-md">
-                {renderImages(product.images)}
-                <div className="p-4 flex flex-col items-start w-full">
-                  <div className="flex items-center justify-between w-full mt-2">
-                    <span className="text-white bg-purple-500 text-xs font-semibold px-2 py-1 rounded">
-                      {product.category}
-                    </span>
-                    <span className="text-red-500 bg-pink-100 text-xs font-semibold px-2 py-1 rounded">
-                      {product.discount}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold mt-2">{product.title}</h3>
-                  <div className="flex items-center justify-between w-full mt-2">
-                    <span className="text-gray-500 line-through">
-                      {product.originalPrice}
-                    </span>
-                    <span className="text-red-500 font-bold">
-                      {product.discountedPrice}
-                    </span>
-                  </div>
-                  <div className="w-full flex justify-between items-center mt-2">
-                    <div className="w-full flex justify-between items-center bg-gray-200 rounded-full h-2.5">
-                      <div
-                        className="bg-gradient-to-r from-red-500 to-orange-500 h-2.5 rounded-full"
-                        style={{ width: "50%" }}
-                      ></div>
-                      <span className="ml-2 text-gray-500 text-sm">
-                        {product.sales}
+          {products.map((product, index) => (
+            <Slide index={index} key={product.id}>
+              <Link href="/product-detail-page" className="block">
+                <div className="flex flex-col items-center m-2 bg-white rounded-lg shadow-md">
+                  {renderImages(product.images)}
+                  <div className="p-4 flex flex-col items-start w-full">
+                    <div className="flex items-center justify-between w-full mt-2">
+                      <span className="text-white bg-purple-500 text-xs font-semibold px-2 py-1 rounded">
+                        {product.category}
                       </span>
+                      <span className="text-red-500 bg-pink-100 text-xs font-semibold px-2 py-1 rounded">
+                        {product.discount}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold mt-2">{product.title}</h3>
+                    <div className="flex items-center justify-between w-full mt-2">
+                      <span className="text-gray-500 line-through">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-red-500 font-bold">
+                        {product.discountedPrice}
+                      </span>
+                    </div>
+                    <div className="w-full flex justify-between items-center mt-2">
+                      <div className="w-full flex justify-between items-center bg-gray-200 rounded-full h-2.5">
+                        <div
+                          className="bg-gradient-to-r from-red-500 to-orange-500 h-2.5 rounded-full"
+                          style={{ width: "50%" }}
+                        ></div>
+                        <span className="ml-2 text-gray-500 text-sm">
+                          {product.sales}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          </Slide>
-        ))}
-      </Slider>
+              </Link>
+            </Slide>
+          ))}
+        </Slider>
         <ButtonBack className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#f3f4f66e] text-gray-800 font-bold p-2 rounded-full">
           <FaAngleLeft />
         </ButtonBack>
@@ -366,6 +367,7 @@ const Page = () => {
   return (
     <>
       <Nav />
+      <DrawerDefault />
       <div className="p-4 sm:p-8 bg-white">
         <div className="lg:flex md:flex block justify-between items-center">
           <div>
