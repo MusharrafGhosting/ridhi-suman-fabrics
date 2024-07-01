@@ -4,6 +4,10 @@ import React, { useState } from 'react'
 
 function Product({cards}) {
 
+    if (!Array.isArray(cards)) {
+        return null; // or some fallback UI
+    }
+    
     return (
         <div className='flex flex-col gap-3 w-[320px] rounded-t-lg'>
            {cards.map((card, index) => (

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ColorSelect from "./ColorSelect";
 import SizeSelect from "./SizeSelect";
 import Product from "@/components/Product";
@@ -11,6 +11,9 @@ const storage = getStorage(app);
 
 function page() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [cards, setCards] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('');
+
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -31,7 +34,6 @@ function page() {
         image: ''
     });
 
-    const [cards, setCards] = useState([]);
     const fileInputRef = useRef(null);
 
     const handleInputChange = (e) => {
@@ -84,6 +86,15 @@ function page() {
         }));
     };
 
+    const fetchProducts = async (category = '') => {
+        try {
+            const response = await axios.get(`http://localhost:3000/api/getProduct${category ? `?category=${category}` : ''}`);
+            setCards(response.data);
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    };
+
     const handleCreate = async () => {
         try {
             const { image, ...data } = formData;
@@ -118,6 +129,8 @@ function page() {
                     });
                     // Reset image preview
                     document.getElementById('image-preview').src = '';
+                    fetchProducts(); // Fetch updated products
+
                 })
                 .catch(async error => {
                     console.error('There was an error adding the product!', error);
@@ -127,7 +140,14 @@ function page() {
             console.error('Error uploading image to Firebase:', error);
         }
     };
-    
+    const handleCategoryChange = (e) => {
+        setSelectedCategory(e.target.value);
+        fetchProducts(e.target.value);
+    };
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
 
     return (
 
@@ -140,8 +160,9 @@ function page() {
                     </div>
                     <div className="flex items-center gap-2 h-[42px]">
                         <div className="hidden md:flex items-center gap-2">
-                            <select className="select select-info w-auto max-w-xs border text-[#8E54E9] h-[42px] px-4 hover:cursor-pointer rounded-md outline outline-1 outline-red-400">
-                                <option disabled selected>Select Category</option>
+                            <select className="select select-info w-auto max-w-xs border text-[#8E54E9] h-[42px] px-4 hover:cursor-pointer rounded-md outline outline-1 outline-red-400"  value={selectedCategory}
+                onChange={handleCategoryChange}>
+                                <option>Select Category</option>
                                 <option>Lehengas</option>
                                 <option>Sarees</option>
                                 <option>Suits</option>
@@ -425,11 +446,11 @@ function page() {
                         <div className="w-full hover:cursor-pointer bg-[#8E54E9] h-[39px] rounded-lg p-[10px] text-white text-center leading-5" onClick={handleCreate}>
                             <button className=" font-normal " >Create</button>
                         </div>
-                        <Product cards={cards} />
                     </div>
                 </div>
             </dialog>
 
+            <Product cards={cards} />
 
         </div>
 
