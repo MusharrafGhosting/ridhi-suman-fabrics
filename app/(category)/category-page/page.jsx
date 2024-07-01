@@ -152,42 +152,41 @@ const ProductGrid = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products.slice(0, visibleCount).map((product) => (
-          <div
-            key={product.id}
-            className="flex flex-col items-center m-2 bg-white rounded-lg shadow-md"
-          >
-            {renderImages(product.images)}
-            <div className="p-4 flex flex-col items-start w-full h-full">
-              <div className="flex items-center justify-between w-full mt-2">
-                <span className="text-white bg-purple-500 text-xs font-semibold px-2 py-1 rounded">
-                  {product.category}
-                </span>
-                <span className="text-red-500 bg-pink-100 text-xs font-semibold px-2 py-1 rounded">
-                  {product.discount}
-                </span>
-              </div>
-              <h3 className="text-lg font-bold mt-2">{product.title}</h3>
-              <div className="flex items-center justify-between w-full mt-2">
-                <span className="text-gray-500 line-through">
-                  {product.originalPrice}
-                </span>
-                <span className="text-red-500 font-bold">
-                  {product.discountedPrice}
-                </span>
-              </div>
-              <div className="w-full flex justify-between items-center mt-2">
-                <div className="w-full flex justify-between items-center bg-gray-200 rounded-full h-2.5">
-                  <div
-                    className="bg-gradient-to-r w-9/10 from-red-500 to-orange-500 h-2.5 rounded-full"
-                    style={{ width: "50%" }}
-                  ></div>
-                  <span className="ml-2 text-gray-500 text-sm">
-                    {product.sales}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+           <Link key={product.id} href={`/product`}>
+           <div className="flex flex-col items-center m-2 bg-white rounded-lg shadow-md">
+             {renderImages(product.images)}
+             <div className="p-4 flex flex-col items-start w-full h-full">
+               <div className="flex items-center justify-between w-full mt-2">
+                 <span className="text-white bg-purple-500 text-xs font-semibold px-2 py-1 rounded">
+                   {product.category}
+                 </span>
+                 <span className="text-red-500 bg-pink-100 text-xs font-semibold px-2 py-1 rounded">
+                   {product.discount}
+                 </span>
+               </div>
+               <h3 className="text-lg font-bold mt-2">{product.title}</h3>
+               <div className="flex items-center justify-between w-full mt-2">
+                 <span className="text-gray-500 line-through">
+                   {product.originalPrice}
+                 </span>
+                 <span className="text-red-500 font-bold">
+                   {product.discountedPrice}
+                 </span>
+               </div>
+               <div className="w-full flex justify-between items-center mt-2">
+                 <div className="w-full flex justify-between items-center bg-gray-200 rounded-full h-2.5">
+                   <div
+                     className="bg-gradient-to-r w-9/10 from-red-500 to-orange-500 h-2.5 rounded-full"
+                     style={{ width: "50%" }}
+                   ></div>
+                   <span className="ml-2 text-gray-500 text-sm">
+                     {product.sales}
+                   </span>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </Link>
         ))}
       </div>
       {visibleCount < products.length && (
@@ -314,7 +313,7 @@ function ProductCarousel() {
         <Slider>
         {products.map((product, index) => (
           <Slide index={index} key={product.id}>
-            <Link href="/product" className="block">
+            <Link href="/product-detail-page" className="block">
               <div className="flex flex-col items-center m-2 bg-white rounded-lg shadow-md">
                 {renderImages(product.images)}
                 <div className="p-4 flex flex-col items-start w-full">

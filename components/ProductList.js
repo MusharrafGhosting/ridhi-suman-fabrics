@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const products = [
@@ -9,7 +10,7 @@ const products = [
     originalPrice: "₹2000.00",
     discountedPrice: "₹1000.00",
     sales: "120 Sold",
-    images: ["/category/download (1).jpg","/category/download (1).jpg"], // 1 image
+    images: ["/category/download (1).jpg", "/category/download (1).jpg"], // 1 image
   },
   {
     id: 2,
@@ -44,10 +45,10 @@ const products = [
     discountedPrice: "₹1500.00",
     sales: "200 Sold",
     images: [
-        "/category/image1.png",
-        "/category/image2.png",
-        "/category/image3.png",
-        "/category/download (1).jpg",
+      "/category/image1.png",
+      "/category/image2.png",
+      "/category/image3.png",
+      "/category/download (1).jpg",
     ], // 4 images
   },
   // Add more products as needed
@@ -120,7 +121,10 @@ const ProductList = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full px-4">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <Link key={product.id} href={`/product-detail-page`}>
+            
+              <ProductCard product={product} />
+          </Link>
         ))}
       </div>
     </div>

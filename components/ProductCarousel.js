@@ -8,6 +8,7 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
+import Link from "next/link";
 
 function ProductCarousel() {
   const [visibleSlides, setVisibleSlides] = useState(1);
@@ -110,6 +111,7 @@ function ProductCarousel() {
         <Slider>
           {products.map((product, index) => (
             <Slide index={index} key={product.id}>
+              <Link key={product.id} href={`/product`}>
               <div className="flex flex-col items-center m-2 bg-white rounded-lg shadow-md">
                 <img
                   src={product.image}
@@ -147,6 +149,7 @@ function ProductCarousel() {
                   </div>
                 </div>
               </div>
+              </Link>
             </Slide>
           ))}
         </Slider>
